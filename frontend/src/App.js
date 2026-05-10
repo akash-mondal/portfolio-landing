@@ -7,7 +7,6 @@ import { Navbar } from "@/components/portfolio/Navbar";
 import { Hero } from "@/components/portfolio/Hero";
 import { About } from "@/components/portfolio/About";
 import { SelectedWorks } from "@/components/portfolio/SelectedWorks";
-import { Explorations } from "@/components/portfolio/Explorations";
 import { Experience } from "@/components/portfolio/Experience";
 import { Stats } from "@/components/portfolio/Stats";
 import { Footer } from "@/components/portfolio/Footer";
@@ -80,7 +79,6 @@ function App() {
             <Hero />
             <About />
             <SelectedWorks />
-            <Explorations />
             <Experience />
             <Stats />
           </main>
