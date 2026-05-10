@@ -93,10 +93,6 @@ export const Hero = () => {
 
       {/* Centered content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center min-h-screen px-6 pt-24 pb-32">
-        <span className="blur-in text-xs text-muted uppercase tracking-[0.3em] mb-8">
-          {PROFILE.eyebrow}
-        </span>
-
         <h1 className="name-reveal text-6xl md:text-8xl lg:text-[9rem] font-display italic leading-[0.9] tracking-tight text-text-primary mb-6">
           {PROFILE.name}
         </h1>

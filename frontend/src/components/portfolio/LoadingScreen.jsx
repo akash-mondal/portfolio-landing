@@ -44,7 +44,7 @@ export const LoadingScreen = ({ onComplete }) => {
         transition={{ duration: 0.6, delay: 0.1 }}
       >
         <span className="text-xs text-muted uppercase tracking-[0.3em]">
-          {PROFILE.eyebrow}
+          {PROFILE.company} — {PROFILE.shortLocation}
         </span>
       </motion.div>
 
@@ -56,7 +56,7 @@ export const LoadingScreen = ({ onComplete }) => {
         transition={{ duration: 0.6, delay: 0.15 }}
       >
         <span className="text-xs text-muted uppercase tracking-[0.3em]">
-          {PROFILE.company} — {PROFILE.shortLocation}
+          {PROFILE.title}
         </span>
       </motion.div>
 
