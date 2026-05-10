@@ -14,6 +14,8 @@ export const Navbar = ({ activeId = "home", onNavigate }) => {
   }, []);
 
   const handleClick = (e, link) => {
+    // External / file links open in new tab — let browser handle it
+    if (link.external) return;
     e.preventDefault();
     onNavigate?.(link.id);
     const el = document.getElementById(link.id);
@@ -48,20 +50,26 @@ export const Navbar = ({ activeId = "home", onNavigate }) => {
         {/* Nav links */}
         <ul className="flex items-center gap-1">
           {NAV_LINKS.map((link) => {
-            const isActive = activeId === link.id;
+            const isActive = !link.external && activeId === link.id;
             return (
               <li key={link.id}>
                 <a
                   href={link.href}
                   onClick={(e) => handleClick(e, link)}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noreferrer" : undefined}
+                  data-testid={`nav-${link.id}`}
                   className={cn(
-                    "text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors duration-200",
+                    "inline-flex items-center gap-1 text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors duration-200",
                     isActive
                       ? "text-text-primary bg-stroke/60"
                       : "text-muted hover:text-text-primary hover:bg-stroke/50"
                   )}
                 >
                   {link.label}
+                  {link.external && (
+                    <ArrowUpRight className="w-3 h-3" strokeWidth={2} />
+                  )}
                 </a>
               </li>
             );

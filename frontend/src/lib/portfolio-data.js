@@ -25,7 +25,12 @@ export const PROFILE = {
 export const NAV_LINKS = [
   { id: "home", label: "Home", href: "#home" },
   { id: "work", label: "Work", href: "#work" },
-  { id: "resume", label: "Resume", href: "#resume" },
+  {
+    id: "resume",
+    label: "Resume",
+    href: "https://customer-assets.emergentagent.com/job_miny-portfolio-dev/artifacts/waws7zbp_resume.pdf",
+    external: true,
+  },
 ];
 
 export const PROJECTS = [
