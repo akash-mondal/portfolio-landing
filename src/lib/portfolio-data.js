@@ -13,7 +13,7 @@ export const PROFILE = {
   linkedin: "https://linkedin.com/in/akshmnd",
   twitter: "https://twitter.com/akshmnd",
   resumeUrl: "/resume.pdf",
-  profileImage: "https://customer-assets.emergentagent.com/job_miny-portfolio-dev/artifacts/nq6ndtws_profile.png",
+  profileImage: "/profile.png",
   minyLabsLogo: "https://customer-assets.emergentagent.com/job_adc8eb87-cfa1-4051-8080-24959918290a/artifacts/ubep0xhy_logo_for_an_ai_and_crypto_lab_called_miny_labs_bra_019e03ff-96cc-75cd-8d4f-1681d476312b.svg",
   description:
     "Building primitives where cryptography meets autonomy — encrypted agent runtimes, on-chain identity, and protocols that ship across every chain that matters.",
