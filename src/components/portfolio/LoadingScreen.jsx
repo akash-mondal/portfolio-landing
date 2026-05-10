@@ -36,30 +36,6 @@ export const LoadingScreen = ({ onComplete }) => {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.6, ease: [0.65, 0, 0.35, 1] } }}
     >
-      {/* Top-left label */}
-      <motion.div
-        className="absolute top-6 left-6 md:top-10 md:left-10"
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-      >
-        <span className="text-xs text-muted uppercase tracking-[0.3em]">
-          {PROFILE.company} — {PROFILE.shortLocation}
-        </span>
-      </motion.div>
-
-      {/* Top-right miny labs link */}
-      <motion.div
-        className="absolute top-6 right-6 md:top-10 md:right-10"
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.15 }}
-      >
-        <span className="text-xs text-muted uppercase tracking-[0.3em]">
-          {PROFILE.title}
-        </span>
-      </motion.div>
-
       {/* Center rotating word */}
       <div className="absolute inset-0 flex items-center justify-center">
         <AnimatePresence mode="wait">
