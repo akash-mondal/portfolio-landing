@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, MapPin, Mail } from "lucide-react";
-import { PROFILE, SKILL_GROUPS } from "@/lib/portfolio-data";
+import { PROFILE } from "@/lib/portfolio-data";
 
 export const About = () => {
   return (
@@ -95,33 +95,6 @@ export const About = () => {
                 </a>
                 — a research-driven lab shipping primitives where cryptography meets autonomy. We architect on-chain agent systems with real cryptographic guarantees: x402 micropayments, ERC-8004 trust registries, BITE v2 encrypted execution, ZK identity on Midnight.
               </p>
-              <p className="text-muted">
-                Before this: Generative AI at Samsung R&D, virtual try-on pipelines at Yash Technologies, indie products in 2025, and — along the way — a habit of winning hackathons by shipping end-to-end in under two weeks.
-              </p>
-            </div>
-
-            {/* Skill groups */}
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-5">
-              {SKILL_GROUPS.map((sg) => (
-                <div
-                  key={sg.group}
-                  className="rounded-2xl border border-stroke bg-surface/40 p-5"
-                >
-                  <p className="text-[10px] text-muted uppercase tracking-[0.25em] mb-3">
-                    {sg.group}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {sg.items.map((s) => (
-                      <span
-                        key={s}
-                        className="text-[11px] text-text-primary/85 px-2 py-0.5 rounded-md bg-stroke/40 border border-stroke"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-3">

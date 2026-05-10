@@ -175,11 +175,4 @@ export const STATS = [
   { value: "$18K+", label: "Hackathon winnings", note: "across 8+ wins" },
 ];
 
-export const SKILL_GROUPS = [
-  { group: "Smart Contracts", items: ["Solidity", "EVM", "Hardhat", "Foundry", "Wagmi/Viem", "Ethers.js", "ERC-8004", "x402"] },
-  { group: "Chains", items: ["EVM L1/L2s", "Solana", "Bitcoin L2s", "Midnight", "SKALE", "Mantle", "Hedera", "Creditcoin"] },
-  { group: "AI & Agents", items: ["LangGraph", "MCP", "Claude / OpenAI", "Agent.ai", "Sensay", "PyTorch", "Hugging Face", "RAG", "ASR/TTS"] },
-  { group: "Frontend & Tooling", items: ["React", "Next.js", "TypeScript", "Tailwind", "Node.js", "Python", "Docker", "AWS"] },
-];
-
 export const HLS_VIDEO = "https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8";
