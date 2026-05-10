@@ -1,14 +1,20 @@
 import { useEffect, useRef } from "react";
 
-// Halftone dot grid with per-dot spring physics.
-// Cursor pushes dots away with a falloff force; springs pull them home.
+// Halftone reproduction of an image as a grid of dots, each one's radius
+// driven by the brightness of the underlying pixel. Dots have per-particle
+// spring physics: the cursor pushes them aside with a radial falloff,
+// springs pull them back home. Image and filter are the same thing.
 export const HalftoneCanvas = ({
-  spacing = 7,
-  radius = 1.25,
+  src,
+  spacing = 6,
+  maxRadius = 2.6,
+  minRadius = 0.25,
   repelRadius = 90,
   repelStrength = 1.6,
   spring = 0.06,
   damping = 0.78,
+  dotColor = "rgba(245,245,245,0.95)",
+  invert = false,
 }) => {
   const canvasRef = useRef(null);
 
@@ -26,24 +32,77 @@ export const HalftoneCanvas = ({
     const mouse = { x: -9999, y: -9999, active: false };
     let raf;
 
-    const resize = () => {
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    let imgReady = false;
+
+    const sampleCanvas = document.createElement("canvas");
+    const sampleCtx = sampleCanvas.getContext("2d", { willReadFrequently: true });
+
+    const build = () => {
+      if (!imgReady) return;
       const rect = parent.getBoundingClientRect();
       width = rect.width;
       height = rect.height;
+      if (width <= 0 || height <= 0) return;
+
       canvas.width = Math.floor(width * dpr);
       canvas.height = Math.floor(height * dpr);
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
+      // Object-cover mapping from natural image into the card.
+      const imgAspect = img.naturalWidth / img.naturalHeight;
+      const cardAspect = width / height;
+      let drawW, drawH, offX, offY;
+      if (imgAspect > cardAspect) {
+        drawH = height;
+        drawW = drawH * imgAspect;
+        offX = (width - drawW) / 2;
+        offY = 0;
+      } else {
+        drawW = width;
+        drawH = drawW / imgAspect;
+        offX = 0;
+        offY = (height - drawH) / 2;
+      }
+
+      sampleCanvas.width = Math.max(1, Math.floor(width));
+      sampleCanvas.height = Math.max(1, Math.floor(height));
+      sampleCtx.clearRect(0, 0, sampleCanvas.width, sampleCanvas.height);
+      sampleCtx.drawImage(img, offX, offY, drawW, drawH);
+      const data = sampleCtx.getImageData(
+        0,
+        0,
+        sampleCanvas.width,
+        sampleCanvas.height
+      ).data;
+      const sw = sampleCanvas.width;
+
       const next = [];
       for (let y = spacing / 2; y < height; y += spacing) {
         for (let x = spacing / 2; x < width; x += spacing) {
-          next.push({ x, y, vx: 0, vy: 0, hx: x, hy: y });
+          const ix = Math.floor(x);
+          const iy = Math.floor(y);
+          const idx = (iy * sw + ix) * 4;
+          const r = data[idx];
+          const g = data[idx + 1];
+          const b = data[idx + 2];
+          let lum = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+          if (invert) lum = 1 - lum;
+          const radius = minRadius + (maxRadius - minRadius) * lum;
+          next.push({ x, y, vx: 0, vy: 0, hx: x, hy: y, r: radius });
         }
       }
       dots = next;
     };
+
+    img.onload = () => {
+      imgReady = true;
+      build();
+    };
+    img.src = src;
 
     const onMouseMove = (e) => {
       const rect = parent.getBoundingClientRect();
@@ -80,20 +139,20 @@ export const HalftoneCanvas = ({
         d.y += d.vy;
       }
 
-      ctx.fillStyle = "#000";
+      ctx.fillStyle = dotColor;
       ctx.beginPath();
       for (let i = 0; i < dots.length; i++) {
         const d = dots[i];
-        ctx.moveTo(d.x + radius, d.y);
-        ctx.arc(d.x, d.y, radius, 0, Math.PI * 2);
+        if (d.r < 0.2) continue;
+        ctx.moveTo(d.x + d.r, d.y);
+        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
       }
       ctx.fill();
 
       raf = requestAnimationFrame(tick);
     };
 
-    resize();
-    const ro = new ResizeObserver(resize);
+    const ro = new ResizeObserver(build);
     ro.observe(parent);
     parent.addEventListener("mousemove", onMouseMove);
     parent.addEventListener("mouseleave", onMouseLeave);
@@ -104,13 +163,25 @@ export const HalftoneCanvas = ({
       ro.disconnect();
       parent.removeEventListener("mousemove", onMouseMove);
       parent.removeEventListener("mouseleave", onMouseLeave);
+      img.onload = null;
     };
-  }, [spacing, radius, repelRadius, repelStrength, spring, damping]);
+  }, [
+    src,
+    spacing,
+    maxRadius,
+    minRadius,
+    repelRadius,
+    repelStrength,
+    spring,
+    damping,
+    dotColor,
+    invert,
+  ]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full mix-blend-multiply pointer-events-none"
+      className="absolute inset-0 w-full h-full pointer-events-none"
     />
   );
 };

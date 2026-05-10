@@ -29,15 +29,15 @@ export const About = () => {
             transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
             className="lg:col-span-5 flex flex-col"
           >
-            <div className="relative rounded-3xl overflow-hidden border border-stroke bg-surface aspect-[4/5]">
+            <div className="relative rounded-3xl overflow-hidden border border-stroke bg-bg aspect-[4/5]">
+              {/* The image is rendered as halftone dots — image and filter are one. */}
+              <HalftoneCanvas src={PROFILE.profileImage} />
               <img
                 src={PROFILE.profileImage}
                 alt={PROFILE.name}
-                className="w-full h-full object-cover grayscale contrast-[1.2] brightness-[0.95]"
+                className="sr-only"
               />
-              {/* Halftone dot pattern with cursor-reactive per-dot physics */}
-              <HalftoneCanvas />
-              <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg/70 via-transparent to-transparent pointer-events-none" />
 
               {/* Floating tags */}
               <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between">
