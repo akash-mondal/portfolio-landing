@@ -108,8 +108,8 @@ export const Hero = () => {
             className="font-display italic text-text-primary inline-block animate-role-fade-in"
           >
             {PROFILE.roles[roleIndex]}
-          </span>{" "}
-          lives in {PROFILE.shortLocation}.
+          </span>
+          .
         </p>
 
         <p className="blur-in text-sm md:text-base text-muted max-w-md mb-10 leading-relaxed text-pretty">
