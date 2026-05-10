@@ -6,12 +6,13 @@ import { useEffect, useRef } from "react";
 // springs pull them back home. Image and filter are the same thing.
 export const HalftoneCanvas = ({
   src,
-  spacing = 6,
-  maxRadius = 2.6,
-  minRadius = 0.25,
-  repelRadius = 90,
-  repelStrength = 1.6,
-  spring = 0.06,
+  spacing = 3.5,
+  maxRadius = 1.85,
+  minRadius = 0.1,
+  gamma = 0.7,
+  repelRadius = 80,
+  repelStrength = 1.4,
+  spring = 0.07,
   damping = 0.78,
   dotColor = "rgba(245,245,245,0.95)",
   invert = false,
@@ -91,7 +92,8 @@ export const HalftoneCanvas = ({
           const b = data[idx + 2];
           let lum = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
           if (invert) lum = 1 - lum;
-          const radius = minRadius + (maxRadius - minRadius) * lum;
+          const shaped = Math.pow(Math.max(0, Math.min(1, lum)), gamma);
+          const radius = minRadius + (maxRadius - minRadius) * shaped;
           next.push({ x, y, vx: 0, vy: 0, hx: x, hy: y, r: radius });
         }
       }
@@ -143,7 +145,7 @@ export const HalftoneCanvas = ({
       ctx.beginPath();
       for (let i = 0; i < dots.length; i++) {
         const d = dots[i];
-        if (d.r < 0.2) continue;
+        if (d.r < 0.15) continue;
         ctx.moveTo(d.x + d.r, d.y);
         ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
       }
@@ -170,6 +172,7 @@ export const HalftoneCanvas = ({
     spacing,
     maxRadius,
     minRadius,
+    gamma,
     repelRadius,
     repelStrength,
     spring,
