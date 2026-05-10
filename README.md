@@ -2,6 +2,8 @@
 
 Personal portfolio for **Akash Mondal**, Co-Founder & CTO at Miny Labs. A frontend-only single-page React app with HLS background video, GSAP entrance animations, framer-motion transitions, and a section-aware navbar.
 
+**Live:** [akash-portfolio-self.vercel.app](https://akash-portfolio-self.vercel.app) · **Resume:** [akash-portfolio-self.vercel.app/resume.pdf](https://akash-portfolio-self.vercel.app/resume.pdf)
+
 ## Stack
 
 - React 19 + Create React App (via [CRACO](https://craco.js.org/) for path aliases & ESLint config)
@@ -69,7 +71,8 @@ Vercel auto-detects the framework as Create React App (build command `yarn build
 
 ## Live deployment
 
-> Production URL will be added after the first Vercel deploy.
+- Production: <https://akash-portfolio-self.vercel.app>
+- Resume PDF: <https://akash-portfolio-self.vercel.app/resume.pdf>
 
 ## License
 
