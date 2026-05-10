@@ -46,7 +46,7 @@ export const Experience = () => {
                     {e.role}
                   </h3>
                   {e.accent && (
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-text-primary px-2 py-0.5 rounded-full accent-gradient/80">
+                    <span className="text-[10px] uppercase tracking-[0.2em] px-2 py-0.5 rounded-full accent-gradient">
                       <span className="text-bg">Now</span>
                     </span>
                   )}

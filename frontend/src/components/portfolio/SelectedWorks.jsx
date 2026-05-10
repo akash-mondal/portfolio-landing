@@ -37,7 +37,7 @@ export const SelectedWorks = () => {
           </div>
 
           <a
-            href="https://github.com/akash-mondal\"
+            href="https://github.com/akash-mondal"
             target="_blank"
             rel="noreferrer"
             className="hidden md:inline-flex items-center gap-2 group relative rounded-full text-sm text-text-primary px-5 py-2.5 border border-stroke transition-all duration-300"

@@ -1,52 +1,94 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { LoadingScreen } from "@/components/portfolio/LoadingScreen";
+import { Navbar } from "@/components/portfolio/Navbar";
+import { Hero } from "@/components/portfolio/Hero";
+import { About } from "@/components/portfolio/About";
+import { SelectedWorks } from "@/components/portfolio/SelectedWorks";
+import { Journal } from "@/components/portfolio/Journal";
+import { Explorations } from "@/components/portfolio/Explorations";
+import { Experience } from "@/components/portfolio/Experience";
+import { Stats } from "@/components/portfolio/Stats";
+import { Footer } from "@/components/portfolio/Footer";
 
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+const SECTION_IDS = ["home", "work", "resume"];
+const SESSION_KEY = "portfolio_loaded_v1";
 
 function App() {
+  // First-visit-only loading screen (sessionStorage)
+  const [loading, setLoading] = useState(() => {
+    if (typeof window === "undefined") return true;
+    try {
+      return sessionStorage.getItem(SESSION_KEY) !== "1";
+    } catch {
+      return true;
+    }
+  });
+  const [activeId, setActiveId] = useState("home");
+
+  // Lock scroll while the loader is up
+  useEffect(() => {
+    if (loading) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+    return () => document.body.classList.remove("no-scroll");
+  }, [loading]);
+
+  // Section-aware nav: track which section is in view
+  useEffect(() => {
+    if (loading) return;
+    const observers = [];
+    SECTION_IDS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveId(id);
+        },
+        { threshold: 0.35, rootMargin: "-10% 0px -40% 0px" }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+    return () => observers.forEach((o) => o.disconnect());
+  }, [loading]);
+
+  const handleLoaderDone = () => {
+    try {
+      sessionStorage.setItem(SESSION_KEY, "1");
+    } catch {
+      /* ignore */
+    }
+    setLoading(false);
+  };
+
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+    <div className="App bg-bg text-text-primary min-h-screen" data-testid="app-root">
+      <AnimatePresence mode="wait">
+        {loading && (
+          <LoadingScreen key="loader" onComplete={handleLoaderDone} />
+        )}
+      </AnimatePresence>
+
+      {!loading && (
+        <>
+          <Navbar activeId={activeId} onNavigate={setActiveId} />
+          <main>
+            <Hero />
+            <About />
+            <SelectedWorks />
+            <Journal />
+            <Explorations />
+            <Experience />
+            <Stats />
+          </main>
+          <Footer />
+        </>
+      )}
     </div>
   );
 }
