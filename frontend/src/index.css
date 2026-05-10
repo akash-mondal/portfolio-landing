@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Portfolio dark editorial palette */
+        --bg: 0 0% 4%;
+        --surface: 0 0% 8%;
+        --text: 0 0% 96%;
+        --stroke: 0 0% 12%;
+
+        /* Shadcn compat — aligned to dark editorial palette */
+        --background: 0 0% 4%;
+        --foreground: 0 0% 96%;
+        --card: 0 0% 8%;
+        --card-foreground: 0 0% 96%;
+        --popover: 0 0% 6%;
+        --popover-foreground: 0 0% 96%;
+        --primary: 0 0% 96%;
+        --primary-foreground: 0 0% 4%;
+        --secondary: 0 0% 10%;
+        --secondary-foreground: 0 0% 96%;
+        --muted: 0 0% 53%;
+        --muted-foreground: 0 0% 53%;
+        --accent: 0 0% 12%;
+        --accent-foreground: 0 0% 96%;
+        --destructive: 0 70% 45%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 12%;
+        --input: 0 0% 12%;
+        --ring: 210 40% 60%;
+        --radius: 0.75rem;
+
+        /* Accent gradient stops (blue-grey) */
+        --accent-from: 210 35% 67%;  /* #89AACC */
+        --accent-to: 211 47% 53%;    /* #4E85BF */
+    }
+
+    .dark {
+        --bg: 0 0% 4%;
+        --surface: 0 0% 8%;
+        --text: 0 0% 96%;
+        --stroke: 0 0% 12%;
+        --background: 0 0% 4%;
+        --foreground: 0 0% 96%;
+        --card: 0 0% 8%;
+        --card-foreground: 0 0% 96%;
+        --popover: 0 0% 6%;
+        --popover-foreground: 0 0% 96%;
+        --primary: 0 0% 96%;
+        --primary-foreground: 0 0% 4%;
+        --secondary: 0 0% 10%;
+        --secondary-foreground: 0 0% 96%;
+        --muted: 0 0% 53%;
+        --muted-foreground: 0 0% 53%;
+        --accent: 0 0% 12%;
+        --accent-foreground: 0 0% 96%;
+        --destructive: 0 70% 45%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 12%;
+        --input: 0 0% 12%;
+        --ring: 210 40% 60%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html, body, #root {
+        background-color: hsl(var(--bg));
+        color: hsl(var(--text));
+    }
+    body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: "cv11", "ss01";
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
+    }
+    ::selection {
+        background-color: hsl(var(--text) / 0.85);
+        color: hsl(var(--bg));
+    }
+    /* Custom scrollbar — minimal */
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: hsl(var(--bg)); }
+    ::-webkit-scrollbar-thumb { background: hsl(var(--stroke)); border-radius: 6px; }
+    ::-webkit-scrollbar-thumb:hover { background: hsl(0 0% 18%); }
+}
+
+@layer utilities {
+    .accent-gradient {
+        background-image: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
+    }
+    .accent-gradient-text {
+        background-image: linear-gradient(90deg, #B7CDE3 0%, #89AACC 50%, #4E85BF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .text-muted {
+        color: hsl(var(--muted));
+    }
+    .ring-accent-gradient {
+        position: relative;
+    }
+    .ring-accent-gradient::before {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.35s ease;
+    }
+    .ring-accent-gradient:hover::before {
+        opacity: 1;
+    }
+    .gradient-border-animated {
+        background: linear-gradient(90deg, #89AACC, #4E85BF, #89AACC);
+        background-size: 200% 100%;
+        animation: gradient-shift 6s ease infinite;
+    }
+    .halftone {
+        background-image: radial-gradient(circle, #000 1px, transparent 1px);
+        background-size: 4px 4px;
+    }
+    .text-balance { text-wrap: balance; }
+    .text-pretty { text-wrap: pretty; }
+    .glass {
+        background: hsl(var(--surface) / 0.6);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+    }
+    .blur-in { will-change: transform, opacity, filter; }
+    .name-reveal { will-change: transform, opacity; }
+    /* Keep shadcn primitives looking on-brand */
+    [data-debug-wrapper="true"] { display: contents !important; }
+}
+
+/* Hide focus-visible default rings; use accent gradient for focus */
+:focus-visible {
+    outline: 2px solid hsl(var(--ring) / 0.7);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Marquee for footer */
+.marquee-track {
+    display: inline-flex;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+/* Lightbox overlay safety */
+.no-scroll { overflow: hidden; }
