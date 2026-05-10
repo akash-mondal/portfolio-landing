@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, MapPin, Mail } from "lucide-react";
 import { PROFILE } from "@/lib/portfolio-data";
+import { HalftoneCanvas } from "@/components/portfolio/HalftoneCanvas";
 
 export const About = () => {
   return (
@@ -34,24 +35,8 @@ export const About = () => {
                 alt={PROFILE.name}
                 className="w-full h-full object-cover grayscale contrast-[1.2] brightness-[0.95]"
               />
-              {/* Halftone dot pattern (the "101010" look) */}
-              <div
-                className="absolute inset-0 mix-blend-multiply opacity-70 pointer-events-none"
-                style={{
-                  backgroundImage:
-                    "radial-gradient(circle, #000 1px, transparent 1.4px)",
-                  backgroundSize: "5px 5px",
-                }}
-              />
-              <div
-                className="absolute inset-0 mix-blend-screen opacity-50 pointer-events-none"
-                style={{
-                  backgroundImage:
-                    "radial-gradient(circle, rgba(255,255,255,0.9) 0.6px, transparent 1px)",
-                  backgroundSize: "5px 5px",
-                  backgroundPosition: "2.5px 2.5px",
-                }}
-              />
+              {/* Halftone dot pattern with cursor-reactive per-dot physics */}
+              <HalftoneCanvas />
               <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent pointer-events-none" />
 
               {/* Floating tags */}
