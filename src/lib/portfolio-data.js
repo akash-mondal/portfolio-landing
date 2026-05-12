@@ -75,11 +75,11 @@ export const PROJECTS = [
     title: "hestia",
     subtitle: "A fire ledger for wildfire resilience",
     description:
-      "Tokenises prescribed burns into verifiable, tradable assets on Hedera. Climate primitives, on-chain.",
+      "Records mitigation activities as Verifiable Credentials on Hedera and mints Wildfire Resilience Credits insurers accept for premium discounts. 3rd · Sustainability at Hedera Hello Future: Apex.",
     image: "https://images.unsplash.com/photo-1584291527908-033f4d6542c8?auto=format&fit=crop&w=1600&q=80",
-    href: "https://github.com/akash-mondal/hestia",
-    tags: ["Hedera", "RWA", "Climate"],
-    year: "2025",
+    href: "https://www.hestia.bond",
+    tags: ["Hedera", "RWA", "Climate", "Guardian"],
+    year: "2025 — 26",
     span: "md:col-span-7",
   },
 ];
@@ -152,6 +152,7 @@ export const JOURNAL = [
 ];
 
 export const ACHIEVEMENTS = [
+  { name: "Hedera Hello Future: Apex", year: "2026", prize: "$8,000", placement: "3rd · Sustainability", note: "Hestia — wildfire resilience credits on Hedera" },
   { name: "D3 DomainFi Hack", year: "2026", prize: "$10,000", placement: "Winner", note: "On-chain domain intelligence & trading" },
   { name: "Agent.ai Challenge", year: "2026", prize: "$6,000", placement: "Best HubSpot Agent", note: "Autonomous agent for HubSpot workflows" },
   { name: "SKALE x402 Agentic Commerce", year: "2026", prize: "$1,000", placement: "Runner-Up", note: "Encrypted Agent track" },
@@ -172,7 +173,7 @@ export const EXPLORATIONS = [
 export const STATS = [
   { value: "12+", label: "Chains shipped", note: "EVM • Solana • Bitcoin L2 • Midnight" },
   { value: "6", label: "Production protocols", note: "in the last 6 months" },
-  { value: "$18K+", label: "Hackathon winnings", note: "across 8+ wins" },
+  { value: "$26K+", label: "Hackathon winnings", note: "across 9+ wins" },
 ];
 
 export const HLS_VIDEO = "https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8";
