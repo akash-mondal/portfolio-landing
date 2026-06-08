@@ -185,7 +185,7 @@ export const EXPLORATIONS = [
 export const STATS = [
   { value: "20+", label: "Agent systems shipped", note: "Hackathons, clients, indie. Most still running." },
   { value: "$26K+", label: "Hackathon winnings", note: "Nine wins in the last twelve months" },
-  { value: "1", label: "IEEE Access publication", note: "HARMONY · multi-modal agents over MCP" },
+  { value: "2", label: "Peer-reviewed publications", note: "HARMONY (2026) on MCP agents. Plus a 2025 paper on mobile rice-disease diagnosis." },
 ];
 
 export const HLS_VIDEO = "https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8";
