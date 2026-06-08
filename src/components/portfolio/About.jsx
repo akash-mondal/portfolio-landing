@@ -88,7 +88,7 @@ export const About = () => {
                 >
                   Miny Labs
                 </a>
-                — a research-driven lab shipping primitives where cryptography meets autonomy. We architect on-chain agent systems with real cryptographic guarantees: x402 micropayments, ERC-8004 trust registries, BITE v2 encrypted execution, ZK identity on Midnight.
+                , a research-driven lab shipping primitives where cryptography meets autonomy. We architect on-chain agent systems with real cryptographic guarantees: x402 micropayments, ERC-8004 trust registries, BITE v2 encrypted execution, ZK identity on Midnight.
               </p>
             </div>
 

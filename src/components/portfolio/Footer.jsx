@@ -144,7 +144,7 @@ export const Footer = () => {
       <div className="border-t border-stroke">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 py-6 flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs text-muted">
           <span className="font-mono">
-            © {new Date().getFullYear()} {PROFILE.name} — Built in Bengaluru.
+            © {new Date().getFullYear()} {PROFILE.name} · Built in Bengaluru.
           </span>
           <span className="font-mono uppercase tracking-[0.25em]">
             v 2026.01 · Always shipping

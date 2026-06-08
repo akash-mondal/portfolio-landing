@@ -32,7 +32,7 @@ export const SelectedWorks = () => {
               Featured <span className="italic">work</span>
             </h2>
             <p className="text-sm md:text-base text-muted leading-relaxed">
-              Production agents and protocols — money, identity, climate, ops.
+              Production agents and protocols. Money, identity, climate, ops.
               The ones currently shipping.
             </p>
           </div>
@@ -123,7 +123,7 @@ export const SelectedWorks = () => {
                   <span className="inline-flex items-center gap-2 relative rounded-full px-5 py-2 bg-text-primary text-bg text-sm font-medium">
                     <span className="absolute -inset-[2px] rounded-full gradient-border-animated" />
                     <span className="relative inline-flex items-center gap-2">
-                      View — <span className="font-display italic">{p.title}</span>
+                      View <span className="font-display italic">{p.title}</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
                   </span>

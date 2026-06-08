@@ -51,7 +51,7 @@ export const Stats = () => {
               </div>
               <div className="relative">
                 <span className="text-[10px] uppercase tracking-[0.3em] text-muted">
-                  {String(i + 1).padStart(2, "0")} —
+                  {String(i + 1).padStart(2, "0")} ·
                 </span>
                 <p className="mt-4 text-6xl md:text-7xl font-display italic text-text-primary leading-none">
                   {s.value}

@@ -55,7 +55,7 @@ export const Experience = () => {
                   <span className="font-display italic text-text-primary/90">
                     {e.company}
                   </span>{" "}
-                  — {e.place}
+                  · {e.place}
                 </p>
               </div>
               <p className="md:col-span-6 text-sm md:text-base text-text-primary/80 leading-relaxed text-pretty">

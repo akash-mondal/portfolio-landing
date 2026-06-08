@@ -16,7 +16,7 @@ export const PROFILE = {
   profileImage: "/profile.png",
   minyLabsLogo: "https://customer-assets.emergentagent.com/job_adc8eb87-cfa1-4051-8080-24959918290a/artifacts/ubep0xhy_logo_for_an_ai_and_crypto_lab_called_miny_labs_bra_019e03ff-96cc-75cd-8d4f-1681d476312b.svg",
   description:
-    "Building AI agents for the messy parts of business — real-time voice that reasons, agentic ops that close cases, and systems that ship end-to-end. Most things break in production; mine pay rent.",
+    "Building AI agents for the messy parts of business. Real-time voice that reasons, agentic ops that close cases, and systems that ship end-to-end. Most things break in production; mine pay rent.",
   roles: ["Founder", "Engineer", "Builder", "Hacker"],
   loadingWords: ["Build", "Ship", "Reason"],
   eyebrow: "PORTFOLIO 2026",
@@ -52,7 +52,7 @@ export const PROJECTS = [
     subtitle: "Encrypted arena for autonomous trading agents",
     description:
       "Autonomous agents trade against each other with strategy kept private until settlement lands on-chain. ERC-8004 trust registry for agent identity, x402 micropayments for tool calls, SKALE encrypted compute for the execution layer. Won the Encrypted Agent track at the SKALE x402 Agentic Commerce hackathon.",
-    image: "https://images.unsplash.com/photo-1664854953181-b12e6dda8b7c?auto=format&fit=crop&w=1600&q=80",
+    image: "/pixie.png",
     href: "https://github.com/akash-mondal/pixie",
     tags: ["AI Agents", "SKALE", "ERC-8004", "x402"],
     year: "2026",
@@ -64,10 +64,10 @@ export const PROJECTS = [
     subtitle: "Wildfire resilience credits insurers actually accept",
     description:
       "Tokenises prescribed burns and forest treatment into a credit that insurers price into premium discounts. Verifiable Credentials on Hedera, six-component risk score computed on-chain, satellite verification per acre. Took 3rd in the Sustainability track at Hedera Hello Future: Apex.",
-    image: "https://images.unsplash.com/photo-1584291527908-033f4d6542c8?auto=format&fit=crop&w=1600&q=80",
+    image: "/hestia.png",
     href: "https://www.hestia.bond",
     tags: ["Hedera", "Guardian", "Climate", "RWA"],
-    year: "2025 — 26",
+    year: "2025 / 26",
     span: "md:col-span-5",
   },
   {
@@ -98,12 +98,12 @@ export const PROJECTS = [
 
 export const EXPERIENCE = [
   {
-    period: "2026 — Now",
+    period: "2026 to Now",
     role: "Co-Founder & CTO",
     company: "Miny Labs",
     place: "Bengaluru / Remote",
     summary:
-      "Nine hackathon wins, $26K+ in prizes, six production protocols in twelve months. Run engineering and ship most of it solo — Manthan (revenue-dispute ops), Pixie (encrypted agent arena), Hestia (3rd at Hedera Apex), and the rest of the lab's catalogue.",
+      "Nine hackathon wins, $26K+ in prizes, six production protocols in twelve months. Run engineering and ship most of it solo: Manthan (revenue-dispute ops), Pixie (encrypted agent arena), Hestia (3rd at Hedera Apex), and the rest of the lab's catalogue.",
     accent: true,
   },
   {
@@ -112,15 +112,15 @@ export const EXPERIENCE = [
     company: "Freelance / Contract",
     place: "Remote",
     summary:
-      "Shipped agent products end-to-end for paying clients while ramping the indie path. Deshi — tribal-knowledge replicas as conversational AI personas — took 4th at the Sensay EdTech Breakthrough.",
+      "Shipped agent products end-to-end for paying clients while ramping the indie path. Deshi, tribal-knowledge replicas as conversational AI personas, took 4th at the Sensay EdTech Breakthrough.",
   },
   {
-    period: "2024 — 2025",
+    period: "2024 to 2025",
     role: "Generative AI Intern",
     company: "Samsung R&D Institute",
     place: "Bangalore",
     summary:
-      "Designed an MCP-based orchestration framework for multi-modal home agents. Became HARMONY — first author, IEEE Access (2026). Also picked up the Samsung PRISM GenAI win on the way.",
+      "Designed an MCP-based orchestration framework for multi-modal home agents. Became HARMONY; first author, IEEE Access (2026). Also picked up the Samsung PRISM GenAI win on the way.",
   },
   {
     period: "2024",
@@ -128,7 +128,7 @@ export const EXPERIENCE = [
     company: "Yash Technologies",
     place: "Indore",
     summary:
-      "Built and shipped a virtual try-on pipeline on AWS GPU clusters — SegFormer + IDM-VTON + ControlNet, served behind a real-time API. Won Yash Technothrive 2023.",
+      "Built and shipped a virtual try-on pipeline on AWS GPU clusters: SegFormer + IDM-VTON + ControlNet, served behind a real-time API. Won Yash Technothrive 2023.",
   },
 ];
 
@@ -164,13 +164,13 @@ export const JOURNAL = [
 ];
 
 export const ACHIEVEMENTS = [
-  { name: "Hedera Hello Future: Apex", year: "2026", prize: "$8,000", placement: "3rd · Sustainability", note: "Hestia — wildfire resilience credits on Hedera" },
+  { name: "Hedera Hello Future: Apex", year: "2026", prize: "$8,000", placement: "3rd · Sustainability", note: "Hestia · wildfire resilience credits on Hedera" },
   { name: "D3 DomainFi Hack", year: "2026", prize: "$10,000", placement: "Winner", note: "On-chain domain intelligence & trading" },
   { name: "Agent.ai Challenge", year: "2026", prize: "$6,000", placement: "Best HubSpot Agent", note: "Autonomous agent for HubSpot workflows" },
   { name: "SKALE x402 Agentic Commerce", year: "2026", prize: "$1,000", placement: "Runner-Up", note: "Encrypted Agent track" },
-  { name: "Sensay EdTech Breakthrough", year: "2025", prize: "$1,000", placement: "4th Place", note: "Deshi — tribal knowledge to AI replicas" },
-  { name: "Samsung PRISM GenAI", year: "2024", prize: "—", placement: "Winner", note: "Multi-modal smart home GenAI" },
-  { name: "Yash Technothrive23", year: "2024", prize: "—", placement: "Winner", note: "National-level GenAI hackathon" },
+  { name: "Sensay EdTech Breakthrough", year: "2025", prize: "$1,000", placement: "4th Place", note: "Deshi · tribal knowledge to AI replicas" },
+  { name: "Samsung PRISM GenAI", year: "2024", prize: "·", placement: "Winner", note: "Multi-modal smart home GenAI" },
+  { name: "Yash Technothrive23", year: "2024", prize: "·", placement: "Winner", note: "National-level GenAI hackathon" },
 ];
 
 export const EXPLORATIONS = [
@@ -183,7 +183,7 @@ export const EXPLORATIONS = [
 ];
 
 export const STATS = [
-  { value: "20+", label: "Agent systems shipped", note: "Hackathons, clients, indie — most still running" },
+  { value: "20+", label: "Agent systems shipped", note: "Hackathons, clients, indie. Most still running." },
   { value: "$26K+", label: "Hackathon winnings", note: "Nine wins in the last twelve months" },
   { value: "1", label: "IEEE Access publication", note: "HARMONY · multi-modal agents over MCP" },
 ];
