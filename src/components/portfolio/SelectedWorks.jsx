@@ -4,6 +4,7 @@ import { PROJECTS } from "@/lib/portfolio-data";
 import { cn } from "@/lib/utils";
 
 const aspectMap = {
+  "md:col-span-12": "aspect-[16/9] md:aspect-[21/9]",
   "md:col-span-7": "aspect-[16/10]",
   "md:col-span-5": "aspect-[5/6] md:aspect-[4/5]",
 };
@@ -28,11 +29,11 @@ export const SelectedWorks = () => {
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-display leading-[1.05] text-text-primary mb-4">
-              Featured <span className="italic">protocols</span>
+              Featured <span className="italic">work</span>
             </h2>
             <p className="text-sm md:text-base text-muted leading-relaxed">
-              Six production protocols across twelve chains. A selection of the
-              ones that ship.
+              Production agents and protocols — money, identity, climate, ops.
+              The ones currently shipping.
             </p>
           </div>
 

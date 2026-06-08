@@ -16,9 +16,9 @@ export const PROFILE = {
   profileImage: "/profile.png",
   minyLabsLogo: "https://customer-assets.emergentagent.com/job_adc8eb87-cfa1-4051-8080-24959918290a/artifacts/ubep0xhy_logo_for_an_ai_and_crypto_lab_called_miny_labs_bra_019e03ff-96cc-75cd-8d4f-1681d476312b.svg",
   description:
-    "Building primitives where cryptography meets autonomy — encrypted agent runtimes, on-chain identity, and protocols that ship across every chain that matters.",
+    "Building AI agents for the messy parts of business — real-time voice that reasons, agentic ops that close cases, and systems that ship end-to-end. Most things break in production; mine pay rent.",
   roles: ["Founder", "Engineer", "Builder", "Hacker"],
-  loadingWords: ["Build", "Ship", "Encrypt"],
+  loadingWords: ["Build", "Ship", "Reason"],
   eyebrow: "PORTFOLIO 2026",
 };
 
@@ -35,51 +35,63 @@ export const NAV_LINKS = [
 
 export const PROJECTS = [
   {
+    id: "manthan",
+    title: "manthan",
+    subtitle: "Agentic ops for revenue disputes",
+    description:
+      "Closes chargebacks, failed payments, and refund requests in minutes instead of days. Reads Stripe, the CRM, support tickets, and policy in a single investigation; drafts the refund, the customer email, and the CSM ticket; cites every claim back to the record it came from. Human-in-the-loop gates control what auto-runs versus what waits for one-click approval.",
+    image: "/manthan.png",
+    href: "https://www.manthan.quest",
+    tags: ["AI Agents", "Stripe", "HITL", "B2B SaaS"],
+    year: "2026",
+    span: "md:col-span-12",
+  },
+  {
     id: "pixie",
     title: "pixie",
-    subtitle: "Encrypted on-chain trading arena",
+    subtitle: "Encrypted arena for autonomous trading agents",
     description:
-      "BITE v2 + x402 + Algebra DEX + ERC-8004. An encrypted execution arena where AI agents trade with cryptographic guarantees on SKALE.",
+      "Autonomous agents trade against each other with strategy kept private until settlement lands on-chain. ERC-8004 trust registry for agent identity, x402 micropayments for tool calls, SKALE encrypted compute for the execution layer. Won the Encrypted Agent track at the SKALE x402 Agentic Commerce hackathon.",
     image: "https://images.unsplash.com/photo-1664854953181-b12e6dda8b7c?auto=format&fit=crop&w=1600&q=80",
     href: "https://github.com/akash-mondal/pixie",
-    tags: ["SKALE", "BITE v2", "x402", "AI Agents"],
+    tags: ["AI Agents", "SKALE", "ERC-8004", "x402"],
     year: "2026",
     span: "md:col-span-7",
   },
   {
-    id: "twinkle",
-    title: "twinkle",
-    subtitle: "Institutional SDK · x402 agentic payments",
+    id: "hestia",
+    title: "hestia",
+    subtitle: "Wildfire resilience credits insurers actually accept",
     description:
-      "TypeScript SDK for the x402 agentic-payments ecosystem (MNEE token). Battle-tested primitives, ergonomic APIs, production-grade.",
-    image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1600&q=80",
-    href: "https://github.com/akash-mondal/twinkle",
-    tags: ["TypeScript", "x402", "SDK"],
-    year: "2026",
+      "Tokenises prescribed burns and forest treatment into a credit that insurers price into premium discounts. Verifiable Credentials on Hedera, six-component risk score computed on-chain, satellite verification per acre. Took 3rd in the Sustainability track at Hedera Hello Future: Apex.",
+    image: "https://images.unsplash.com/photo-1584291527908-033f4d6542c8?auto=format&fit=crop&w=1600&q=80",
+    href: "https://www.hestia.bond",
+    tags: ["Hedera", "Guardian", "Climate", "RWA"],
+    year: "2025 — 26",
     span: "md:col-span-5",
   },
   {
     id: "bunty",
     title: "Bunty",
-    subtitle: "Privacy-first financial identity · Midnight",
+    subtitle: "Compliance without showing the books",
     description:
-      "Zero-knowledge proofs of income, KYC, and creditworthiness on Midnight. Identity that proves without revealing.",
+      "A borrower proves income, KYC standing, and creditworthiness to a lender without revealing the underlying documents. ZK proofs on Midnight satisfy the regulator and the underwriter without leaking what the regulator and the underwriter don't actually need.",
     image: "https://images.unsplash.com/photo-1709626011485-6fe000ea2dbc?auto=format&fit=crop&w=1600&q=80",
     href: "https://github.com/Miny-Labs/Bunty",
-    tags: ["Midnight", "ZK", "Identity"],
+    tags: ["ZK", "Midnight", "Identity"],
     year: "2026",
     span: "md:col-span-5",
   },
   {
-    id: "hestia",
-    title: "hestia",
-    subtitle: "A fire ledger for wildfire resilience",
+    id: "twinkle",
+    title: "twinkle",
+    subtitle: "x402 agentic payments in one import",
     description:
-      "Records mitigation activities as Verifiable Credentials on Hedera and mints Wildfire Resilience Credits insurers accept for premium discounts. 3rd · Sustainability at Hedera Hello Future: Apex.",
-    image: "https://images.unsplash.com/photo-1584291527908-033f4d6542c8?auto=format&fit=crop&w=1600&q=80",
-    href: "https://www.hestia.bond",
-    tags: ["Hedera", "RWA", "Climate", "Guardian"],
-    year: "2025 — 26",
+      "TypeScript SDK that compresses x402 integration from a sprint into a morning. Powers institutional desks plugging into the MNEE token ecosystem; battle-tested across six protocols and the agents that talk to them.",
+    image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1600&q=80",
+    href: "https://github.com/akash-mondal/twinkle",
+    tags: ["TypeScript", "x402", "SDK"],
+    year: "2026",
     span: "md:col-span-7",
   },
 ];
@@ -91,7 +103,7 @@ export const EXPERIENCE = [
     company: "Miny Labs",
     place: "Bengaluru / Remote",
     summary:
-      "Leading engineering for a research-driven crypto + AI lab. 6 production protocols across 12+ chains in 6 months. Three back-to-back hackathon wins under the Miny banner.",
+      "Nine hackathon wins, $26K+ in prizes, six production protocols in twelve months. Run engineering and ship most of it solo — Manthan (revenue-dispute ops), Pixie (encrypted agent arena), Hestia (3rd at Hedera Apex), and the rest of the lab's catalogue.",
     accent: true,
   },
   {
@@ -100,7 +112,7 @@ export const EXPERIENCE = [
     company: "Freelance / Contract",
     place: "Remote",
     summary:
-      "Shipped agent products and on-chain integrations for clients and personal projects. 4th place — Sensay EdTech Breakthrough Hackathon with Deshi.",
+      "Shipped agent products end-to-end for paying clients while ramping the indie path. Deshi — tribal-knowledge replicas as conversational AI personas — took 4th at the Sensay EdTech Breakthrough.",
   },
   {
     period: "2024 — 2025",
@@ -108,7 +120,7 @@ export const EXPERIENCE = [
     company: "Samsung R&D Institute",
     place: "Bangalore",
     summary:
-      "Multi-modal Generative AI for smart-home intelligence. Designed an MCP-based agent-orchestration framework — basis of the HARMONY publication.",
+      "Designed an MCP-based orchestration framework for multi-modal home agents. Became HARMONY — first author, IEEE Access (2026). Also picked up the Samsung PRISM GenAI win on the way.",
   },
   {
     period: "2024",
@@ -116,7 +128,7 @@ export const EXPERIENCE = [
     company: "Yash Technologies",
     place: "Indore",
     summary:
-      "SOTA Virtual Try-On pipeline (SegFormer + Stable Diffusion + ControlNet + IDM-VTON) deployed on AWS GPU clusters. Winner — Yash Technothrive23.",
+      "Built and shipped a virtual try-on pipeline on AWS GPU clusters — SegFormer + IDM-VTON + ControlNet, served behind a real-time API. Won Yash Technothrive 2023.",
   },
 ];
 
@@ -171,9 +183,9 @@ export const EXPLORATIONS = [
 ];
 
 export const STATS = [
-  { value: "12+", label: "Chains shipped", note: "EVM • Solana • Bitcoin L2 • Midnight" },
-  { value: "6", label: "Production protocols", note: "in the last 6 months" },
-  { value: "$26K+", label: "Hackathon winnings", note: "across 9+ wins" },
+  { value: "20+", label: "Agent systems shipped", note: "Hackathons, clients, indie — most still running" },
+  { value: "$26K+", label: "Hackathon winnings", note: "Nine wins in the last twelve months" },
+  { value: "1", label: "IEEE Access publication", note: "HARMONY · multi-modal agents over MCP" },
 ];
 
 export const HLS_VIDEO = "https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8";
