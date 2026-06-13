@@ -103,7 +103,7 @@ export const EXPERIENCE = [
     company: "Miny Labs",
     place: "Bengaluru / Remote",
     summary:
-      "Nine hackathon wins, $26K+ in prizes, six production protocols in twelve months. Run engineering and ship most of it solo: Manthan (revenue-dispute ops), Pixie (encrypted agent arena), Hestia (3rd at Hedera Apex), and the rest of the lab's catalogue.",
+      "Ten hackathon wins, $30K+ in prizes, six production protocols in twelve months. Run engineering and ship most of it solo: Manthan (revenue-dispute ops, just took Track 1 at Pirates of the Coral-Bean), Pixie (encrypted agent arena), Hestia (3rd at Hedera Apex), and the rest of the lab's catalogue.",
     accent: true,
   },
   {
@@ -164,6 +164,7 @@ export const JOURNAL = [
 ];
 
 export const ACHIEVEMENTS = [
+  { name: "Pirates of the Coral-Bean", year: "2026", prize: "$3,000", placement: "Winner · Track 1", note: "Manthan · agentic B2B chargeback resolution on Coral (4 MacBook Neos)" },
   { name: "Hedera Hello Future: Apex", year: "2026", prize: "$8,000", placement: "3rd · Sustainability", note: "Hestia · wildfire resilience credits on Hedera" },
   { name: "D3 DomainFi Hack", year: "2026", prize: "$10,000", placement: "Winner", note: "On-chain domain intelligence & trading" },
   { name: "Agent.ai Challenge", year: "2026", prize: "$6,000", placement: "Best HubSpot Agent", note: "Autonomous agent for HubSpot workflows" },
@@ -184,8 +185,8 @@ export const EXPLORATIONS = [
 
 export const STATS = [
   { value: "20+", label: "Agent systems shipped", note: "Hackathons, clients, indie. Most still running." },
-  { value: "$26K+", label: "Hackathon winnings", note: "Nine wins in the last twelve months" },
-  { value: "2", label: "Peer-reviewed publications", note: "HARMONY (2026) on MCP agents. Plus a 2025 paper on mobile rice-disease diagnosis." },
+  { value: "$30K+", label: "Hackathon winnings", note: "Ten wins in the last twelve months" },
+  { value: "2", label: "Peer-reviewed publications", note: "HARMONY (2026) on MCP agents. Plus a 2025 paper on visual-language disease diagnosis." },
 ];
 
 export const HLS_VIDEO = "https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8";
